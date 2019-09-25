@@ -1,0 +1,166 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.1.5, 1 December 2018) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[9pt,a4paper,ragged2e]{altacv}
+
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages.
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+%\ifxetexorluatex
+% If using xelatex or lualatex:
+%\setmainfont{Carlito}
+%\else
+% If using pdflatex:
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+%\fi
+
+% Change the colours if you want to
+\definecolor{Mulberry}{HTML}{72243D}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{SlateGrey}
+\colorlet{accent}{SlateGrey}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%\addbibresource{sample.bib}
+
+% sets the format for the date at the bottom of the resume
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+
+\begin{document}
+    \hyphenpenalty=10000
+    \name{Mark Körner}
+    \tagline{Graduate Student}
+    \photo{2.8cm}{Bewerbungsfoto_C}
+    \personalinfo{%
+    % Not all of these are required!
+    % You can add your own with \printinfo{symbol}{detail}
+    \birthday{21.10.1994}
+    \mailaddress{Ginsterweg 3, 50858 Cologne}
+    \location{Cologne, Germany}
+    \phone{+49 151-17438006} \\
+    \email{mark.c.koerner@gmail.com}
+    %\homepage{www.homepage.com/}
+    %\twitter{@twitterhandle}
+    \linkedin{linkedin.com/in/mark-koerner}
+    \github{github.com/markckoerner}
+    %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+    % \orcid{orcid.org/0000-0000-0000-0000}
+    }
+
+    %% Make the header extend all the way to the right, if you want.
+    \begin{fullwidth}
+        \makecvheader
+    \end{fullwidth}
+
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    % \AtBeginEnvironment{itemize}{\small}
+
+    %% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+    %% You can always just use \marginpar{...} if you do
+    %% not need to align the top of the contents to any
+    %% \cvsection title in the "main" bar.
+
+    \cvsection[page1sidebar]{Education}
+
+    \cveventnew{M.Sc. Data Engineering}{Jacobs University}{Aug 2018 -- To Date}{Bremen, Germany}
+    Computer Science Track \\
+    GPA: 1.36 \\
+    Relevant Coursework: Machine Learning, Data Analytics, Data Mining, Big Databases and Cloud Services
+
+    \divider
+
+    \cveventnew{B.Sc. Business Administration}{Babson College}{Aug 2014 -- May 2018}{Wellesley, MA, USA}
+    Concentrations in Business Analytics and Quantitative Methods \\
+    GPA: 1.74  (US: 3.26) \\
+    %Relevant Coursework: Case Studies in Business Analytics, Business Intelligence and Data Analytics, Time Series and Forecasting
+
+    \medskip
+
+    \cvsection{Experience}
+
+    \cveventnew{Data Analytics Intern}{Next Kraftwerke}{June 2019 -- Present}{Cologne, Germany}
+    \begin{itemize}
+        \item Developing live forecasting capabilities for PV plants with a focus on accuracy and stability for multi-period predictions
+        \item Implementing a unified solution for a majority of the individual plants in the portfolio
+    \end{itemize}
+
+    \divider
+
+    \cveventnew{Quantitative Methods Tutor}{Babson Math Resource Center}{Sept 2016 -- May 2018}{Wellesley, MA, USA}
+    \begin{itemize}
+        \item Assisted students with their work in introductory and mid-level \\ statistics courses
+        \item Communicated statistical concepts to students in a concise and \\ simplified manner to strengthen their understanding
+    \end{itemize}
+
+    \divider
+
+    \cveventnew{Data Analytics Intern}{Next Kraftwerke}{June 2017 -- Aug 2017}{Cologne, Germany}
+    \begin{itemize}
+        \item Analyzed the efficiency and profitability of current assets and product offerings to suggest possible strategic improvements to the current portfolio
+        \item Developed several machine learning models in Python to estimate wind power generation in Germany and reported findings to the Head of Energy Trading
+    \end{itemize}
+
+    \divider
+
+    \cveventnew{MCFE Student Consultant}{SV Post Horn}{Jan 2017 -- May 2017}{Wellesley, MA, USA}
+    \begin{itemize}
+        \item Communicated with the Austrian football club in order to identify opportunities to increase ROI in the areas of branding, sponsorship and ticket revenue
+        \item Prepared and delivered written and oral reports to the client to \\ recommend research-based strategic decisions
+    \end{itemize}
+
+    \divider
+
+    \cveventnew{Market Research Assistant}{Technology Market Insights}{May 2016 -- June 2016}{Newton, MA, USA}
+    \begin{itemize}
+        \item Assisted CEO in analyzing customer survey data by highlighting data patterns and trends using Excel
+        \item Created reports for CEO to present in client meetings containing data-driven insights and solution proposals
+    \end{itemize}
+
+    \bigskip\bigskip\bigskip
+
+    %\begin{fullwidth}
+    %    \hfill Bremen, \today
+    %\end{fullwidth}
+
+    \clearpage
+
+\end{document}

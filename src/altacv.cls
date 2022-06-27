@@ -202,11 +202,11 @@
 %altered cvevent to right-center Duration in the same line as Role and Location in the same line as Company
 \newcommand{\cveventnew}[4]{%
 {\textbf{\Large\color{emphasis}#1}}
-\ifstrequal{#3}{}{}{{\hfill\small\makebox[0.5\linewidth][l]{\hfill\faCalendar\hspace{0.5em}#3}}}\par
+\ifstrequal{#3}{}{}{{\hfill\small\makebox[0.3\linewidth][l]{\hfill\faCalendar\hspace{0.5em}#3}}}\par
 \smallskip\normalsize
 \ifstrequal{#2}{}{}{
 \color{accent}\textbf{#2}}
-\ifstrequal{#4}{}{}{{\hfill\small\makebox[0.5\linewidth][l]{\hfill\faMapMarker\hspace{0.5em}#4}}}\par
+\ifstrequal{#4}{}{}{{\hfill\small\makebox[0.3\linewidth][l]{\hfill\faMapMarker\hspace{0.5em}#4}}}\par
 \smallskip\normalsize
 }
 
@@ -223,65 +223,66 @@
 }
 
 \newcommand{\cvskill}[2]{%
-\textcolor{emphasis}{\textbf{#1}}\hfill
-\foreach \x in {1,...,5}{%
+%\textcolor{emphasis}{\textbf{#1}}\hfill
+\textcolor{emphasis}{#1}\hfill
+\foreach \x in {1,...,3}{%
   \space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
-}
+\vspace{4px}}
 
 % Adapted from @Jake's answer at http://tex.stackexchange.com/a/82729/226
-\newcommand{\wheelchart}[4][0]{%
-    \begingroup\centering
-    \def\innerradius{#3}%
-    \def\outerradius{#2}%
+%\newcommand{\wheelchart}[4][0]{%
+%    \begingroup\centering
+%    \def\innerradius{#3}%
+ %   \def\outerradius{#2}%
     % Calculate total
-    \pgfmathsetmacro{\totalnum}{0}%
-    \foreach \value/\colour/\name in {#4} {%
-        \pgfmathparse{\value+\totalnum}%
-        \global\let\totalnum=\pgfmathresult%
-    }%
-    \begin{tikzpicture}
+%    \pgfmathsetmacro{\totalnum}{0}%
+%    \foreach \value/\colour/\name in {#4} {%
+%        \pgfmathparse{\value+\totalnum}%
+%        \global\let\totalnum=\pgfmathresult%
+%    }%
+%    \begin{tikzpicture}
 
       % Calculate the thickness and the middle line of the wheel
-      \pgfmathsetmacro{\wheelwidth}{\outerradius-\innerradius}
-      \pgfmathsetmacro{\midradius}{(\outerradius+\innerradius)/2}
-      \pgfmathsetmacro{\totalrot}{-90 + #1}
+%      \pgfmathsetmacro{\wheelwidth}{\outerradius-\innerradius}
+%      \pgfmathsetmacro{\midradius}{(\outerradius+\innerradius)/2}
+%      \pgfmathsetmacro{\totalrot}{-90 + #1}
 
       % Rotate so we start from the top
-      \begin{scope}[rotate=\totalrot]
+%      \begin{scope}[rotate=\totalrot]
 
       % Loop through each value set. \cumnum keeps track of where we are in the wheel
-      \pgfmathsetmacro{\cumnum}{0}
-      \foreach \value/\width/\colour/\name in {#4} {
-            \pgfmathsetmacro{\newcumnum}{\cumnum + \value/\totalnum*360}
+%      \pgfmathsetmacro{\cumnum}{0}
+%      \foreach \value/\width/\colour/\name in {#4} {
+%            \pgfmathsetmacro{\newcumnum}{\cumnum + \value/\totalnum*360}
 
             % Calculate the percent value
-            \pgfmathsetmacro{\percentage}{\value/\totalnum*100}
+%            \pgfmathsetmacro{\percentage}{\value/\totalnum*100}
             % Calculate the mid angle of the colour segments to place the labels
-            \pgfmathsetmacro{\midangle}{-(\cumnum+\newcumnum)/2}
+%            \pgfmathsetmacro{\midangle}{-(\cumnum+\newcumnum)/2}
 
             % This is necessary for the labels to align nicely
-            \pgfmathparse{
-               (-\midangle>180?"west":"east")
-            } \edef\textanchor{\pgfmathresult}
-            \pgfmathparse{
-               (-\midangle>180?"flush left":"flush right")
-            } \edef\textalign{\pgfmathresult}
-            \pgfmathsetmacro\labelshiftdir{1-2*(-\midangle<180)}
+%            \pgfmathparse{
+%               (-\midangle>180?"west":"east")
+%            } \edef\textanchor{\pgfmathresult}
+%            \pgfmathparse{
+%               (-\midangle>180?"flush left":"flush right")
+%            } \edef\textalign{\pgfmathresult}
+%            \pgfmathsetmacro\labelshiftdir{1-2*(-\midangle<180)}
 
             % Draw the color segments. Somehow, the \midrow units got lost, so we add 'pt' at the end. Not nice...
-            \filldraw[draw=white,fill=\colour] (-\cumnum:\outerradius) arc (-\cumnum:-(\newcumnum):\outerradius) --
-            (-\newcumnum:\innerradius) arc (-\newcumnum:-(\cumnum):\innerradius) -- cycle;
+%            \filldraw[draw=white,fill=\colour] (-\cumnum:\outerradius) arc (-\cumnum:-(\newcumnum):\outerradius) --
+%            (-\newcumnum:\innerradius) arc (-\newcumnum:-(\cumnum):\innerradius) -- cycle;
 
             % Draw the data labels
-            \draw  [*-,thin,emphasis] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 1ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [xshift=\labelshiftdir*0.5cm,inner sep=1ex, outer sep=0pt, text width=\width,anchor=\textanchor,align=\textalign,font=\small,text=body]{\name};
+%            \draw  [*-,thin,emphasis] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 1ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [xshift=\labelshiftdir*0.5cm,inner sep=1ex, outer sep=0pt, text width=\width,anchor=\textanchor,align=\textalign,font=\small,text=body]{\name};
             % Set the old cumulated angle to the new value
-            \global\let\cumnum=\newcumnum
-        }
-      \end{scope}
+%            \global\let\cumnum=\newcumnum
+%        }
+%      \end{scope}
 %      \draw[gray] (0,0) circle (\outerradius) circle (\innerradius);
-    \end{tikzpicture}\par
-    \endgroup
-}
+%    \end{tikzpicture}\par
+%    \endgroup
+%}
 
 \newcommand{\cvref}[3]{%
   \smallskip
@@ -297,9 +298,9 @@
 
 \RequirePackage[backend=biber,style=authoryear,sorting=ydnt]{biblatex}
 %% For removing numbering entirely when using a numeric style
-% \setlength{\bibhang}{1em}
-% \DeclareFieldFormat{labelnumberwidth}{\makebox[\bibhang][l]{\itemmarker}}
-% \setlength{\biblabelsep}{0pt}
+ \setlength{\bibhang}{1em}
+ \DeclareFieldFormat{labelnumberwidth}{\makebox[\bibhang][l]{\itemmarker}}
+ \setlength{\biblabelsep}{0pt}
 \defbibheading{pubtype}{\cvsubsection{#1}}
 \renewcommand{\bibsetup}{\vspace*{-\baselineskip}}
 \AtEveryBibitem{\makebox[\bibhang][l]{\itemmarker}}
@@ -314,6 +315,7 @@
 \newcommand{\addnextpagesidebar}[2][]{\afterpage{\addsidebar[#1]{#2}}}
 
 \AtBeginDocument{%
+  \hyphenpenalty=10000
   \pagestyle{empty}
   \color{body}
   \raggedright

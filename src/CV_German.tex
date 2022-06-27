@@ -31,6 +31,8 @@
 
 % Change the page layout if you need to
 \geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+%\geometry{left=1cm,right=1cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+
 
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
@@ -43,6 +45,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[default]{lato}
 \usepackage{hyperref}
+%\usepackage{datetime2}
+
 %\fi
 
 \hypersetup{
@@ -69,13 +73,13 @@
 \begin{document}
     \hyphenpenalty=10000
     \name{Mark Körner}
-    \tagline{Master Kandidat Data Engineering}
+    %\tagline{Graduate Data Engineering}
     \photo{2.8cm}{Bewerbungsfoto_C}
     \personalinfo{%
     % Not all of these are required!
     % You can add your own with \printinfo{symbol}{detail}
     \birthday{21.10.1994}
-    \mailaddress{Schönhauser Allee 186, 10119 Berlin}
+    \mailaddress{Pappelallee 3-4, 10437 Berlin}
     %\location{Bremen, Deutschland}
     \phone{+49 151-17438006}
     \email{mark.c.koerner@gmail.com}
@@ -100,74 +104,56 @@
     %% not need to align the top of the contents to any
     %% \cvsection title in the "main" bar.
 
-    \cvsection[page1sidebar_de]{Ausbildung}
+    \cvsection[page1sidebar_de]{Praktische Erfahrung}
 
-    \cveventnew{M.Sc. Data Engineering}{Jacobs University}{Aug 2018 -- heute}{Bremen, DE}
-    \textit{GPA}: 1.31 (\textit{US}: 3.69) \\
-    Computer Science Track \\
-    \textit{Thema Masterarbeit}: Graph Representation Learning for Cyber Threat Intelligence\\
-    \textit{Relevante Kurse}: Machine Learning, Data Analytics, Data Mining, Big Databases and Cloud Services, Data Visualization \& Image Processing
+    \cveventnew{Data Consultant}{9 friendly white rabbits}{Nov 2020 -- heute}{Berlin, DE}
+    \begin{itemize}
+        \item Mitarbeit an verschiedenen Kundenprojekten in den Bereichen Tracking, Data Engineering, Analytics und Data Science
+        \item Konzeptionierung und Implementierung von ETL Prozessen mit Python, Google Dataflow, Bigquery, Skyvia und dbt
+        \item kundenspezifische Datenanalysen von Tracking- und Transaktionsdaten in SQL, Python und Data Studio Dashboards
+    \end{itemize}
 
     \divider
 
-    \cveventnew{B.Sc. Business Administration}{Babson College}{Aug 2014 -- Mai 2018}{Wellesley, MA, USA}
-    \textit{GPA}: 1.74  (\textit{US}: 3.26) \\
-    Schwerpunkte in Business Analytics und Quantitative Methods \\
-    %Relevante Kurse: Case Studies in Business Analytics, Business Intelligence and Data Analytics, Time Series and Forecasting
-
-    \medskip\medskip\medskip
-
-    \cvsection{Praktische Erfahrung}
-
-    \cveventnew{Werkstudent Data \& Analytics}{KPMG Lighthouse}{Okt 2019 -- Mai 2020}{Bremen, DE}
+    \cveventnew{Consultant Data \& Analytics}{KPMG Lighthouse}{Okt 2019 -- Mai 2020}{Bremen, DE}
     \begin{itemize}
-        \item Entwicklung mehrerer SaaS-Lösungen zur finanziellen Bewertung von \\ Unternehmen für Berechnungen wie die Pre-Deal PPA auf der Sofy \\ Analytics-Plattform
+        \item Entwicklung mehrerer SaaS-Produkte zur finanziellen Bewertung von Unternehmen für Berechnungen wie die Pre-Deal PPA auf der Sofy  Analytics-Plattform
         %\item Front- und Backend Entwicklung in T-SQL, Javascript, HTML \& CSS in einem agilen Teamumfeld
         \item Lenken von und Teilnahme an einem agilen Teamumfeld bei der Projektarbeit in T-SQL, Javascript, HTML \& CSS
     \end{itemize}
 
     \divider
 
-    \cveventnew{Data Science Praktikant}{Next Kraftwerke}{Jun 2019 -- Aug 2019}{Köln, DE}
+    \cveventnew{Data Scientist}{Next Kraftwerke}{Jun 2019 -- Aug 2019}{Köln, DE}
     \begin{itemize}
-        \item Entwicklung eines skalierbaren Live-Vorhersage-Frameworks für \\ Photovoltaikanlagen mit Schwerpunkt auf Genauigkeit und Stabilität für mehrperiodische Vorhersagen
+        \item Entwicklung eines skalierbaren Live-Vorhersage-Frameworks für  Photovoltaikanlagen mit Schwerpunkt auf Genauigkeit und Stabilität für mehrperiodische Vorhersagen
         \item Implementierte eine einheitliche Lösung für die Mehrheit der einzelnen Werke im Portfolio des Unternehmens
     \end{itemize}
 
     \divider
 
-    \cveventnew{Tutor}{Babson Math Resource Center}{Sept 2016 -- Mai 2018}{Wellesley, MA, USA}
-    \begin{itemize}
-        \item Hilfe für Studenten in den Einführungs- und fortgeschrittenen \\ Statistik Kursen
-        \item Erklären und vereinfachen von statistischen Konzepten
-    \end{itemize}
-
-    \divider
-
-    \cveventnew{Data Analytics Praktikant}{Next Kraftwerke}{Jun 2017 -- Aug 2017}{Köln, DE}
+    \cveventnew{Data Analyst}{Next Kraftwerke}{Jun 2017 -- Aug 2017}{Köln, DE}
     \begin{itemize}
         \item Überprüfung des Wind-Portfolios auf Markteffizienz und \\ Verbesserungsmöglichkeiten
         \item Erarbeiten und Testen von verschiedenen Prognose-Ansätzen der Windenergie-Generation im deutschen Stromnetz
     \end{itemize}
 
+    \medskip\medskip\medskip
+    \cvsection{Ausbildung}
+
+    \cveventnew{M.Sc. Data Engineering}{Jacobs University}{Aug 2018 -- Aug 2020}{Bremen, DE}
+    \textit{GPA}: 1.32, Computer Science Track \\ % (\textit{US}: 3.68) \
+    \textit{Thema Masterarbeit}: Graph Representation Learning for Cyber Threat Intelligence\\
+    %\textit{Relevante Kurse}: Machine Learning, Data Analytics, Data Mining, Big Databases and Cloud Services, Data Visualization \& Image Processing
+
     \divider
 
-    \cveventnew{MCFE Student Consultant}{SV Post Horn}{Jan 2017 -- Mai 2017}{Wellesley, MA, USA}
-    \begin{itemize}
-        \item Teil eines Studenten-Teams für ein Consulting-Projekt des \\ österreichischen Fußballklubs
-        \item Vorbereiten und Präsentieren von Empfehlungen zu den Themen Branding, Sponsoring und Kartenverkäufen
-    \end{itemize}
+    \cveventnew{B.Sc. Business Administration}{Babson College}{Aug 2014 -- Mai 2018}{Wellesley, MA, USA}
+    \textit{GPA}: 1.74 \\% (\textit{US}: 3.26) \\
+    Schwerpunkte in Business Analytics und Quantitative Methods \\
+    %Relevante Kurse: Case Studies in Business Analytics, Business Intelligence and Data Analytics, Time Series and Forecasting
 
-    %\divider
-
-    %\cveventnew{Market Research Assistant}{Technology Market Insights}{May 2016 -- Jun 2016}{Newton, MA}
-    %\begin{itemize}
-    %\item Quantitative und graphische Datenanalyse mit Excel
-    %\item Präsentieren von strategischen Verbesserungsorschlägen  zum CEO
-    %\end{itemize}
-
-    \medskip
-
+    \medskip\medskip\medskip
     \clearpage
 
 \end{document}
